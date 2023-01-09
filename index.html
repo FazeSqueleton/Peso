@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de peso en otros planetas</title>
+    <style>
+        body {
+          background-image: url(https://www.eltiempo.com/files/image_640_428/uploads/2020/12/09/5fd1466c9bad3.jpeg);
+          background-size: cover;
+          background-position: center;
+          height: 745px;
+          text-align: center;
+          color: white;
+          font-weight: bold;
+          font-size: 50px;
+         }
+        button, select, input {
+          border-radius: 10px;
+          height: 40px;
+          width: 445px;
+        }
+      </style>
+</head>
+<body>
+    <h1>Calculadora de peso en otros planetas</h1>
+    <p>Ingresa tu peso en la Tierra:</p>
+    <input type="text" id="earthWeightInput">
+    <p>Elige un planeta:</p>
+    <select id="planetSelect">
+      <option value="mercury">Mercurio</option>
+      <option value="venus">Venus</option>
+      <option value="mars">Marte</option>
+      <option value="jupiter">Júpiter</option>
+      <option value="saturn">Saturno</option>
+      <option value="uranus">Urano</option>
+      <option value="neptune">Neptuno</option>
+      <option value="pluto">Plutón</option>
+    </select>
+    <br>
+    <button onclick="calculateWeight()">Calcular</button>
+    <p>Tu peso en el planeta elegido es: <span id="weightOnPlanet"></span></p>
+    <script>
+        function calculateWeight() {
+          // Obtener el peso en la Tierra y el planeta elegido
+          var earthWeight = document.getElementById("earthWeightInput").value;
+          var planet = document.getElementById("planetSelect").value;
+          // Calcular el peso en el planeta elegido utilizando la fórmula y asignar el resultado a la variable weightOnPlanet
+          var weightOnPlanet;
+          if (planet === "mercury") {
+            weightOnPlanet = earthWeight * 0.378;
+          } else if (planet === "venus") {
+            weightOnPlanet = earthWeight * 0.907;
+          } else if (planet === "mars") {
+            weightOnPlanet = earthWeight * 0.377;
+          } else if (planet === "jupiter") {
+            weightOnPlanet = earthWeight * 2.36;
+          } else if (planet === "saturn") {
+            weightOnPlanet = earthWeight * 0.916;
+          } else if (planet === "uranus") {
+            weightOnPlanet = earthWeight * 0.889;
+          } else if (planet === "neptune") {
+            weightOnPlanet = earthWeight * 1.12;
+          } else if (planet === "pluto") {
+            weightOnPlanet = earthWeight * 0.06;
+          }
+          // Mostrar el peso en el planeta elegido en la página
+          document.getElementById("weightOnPlanet").innerHTML = weightOnPlanet;
+        }
+      </script>
+      
+    
+</body>
+</html>
+
+
